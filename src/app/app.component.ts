@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TestApp';
+  isCollapsed = false;
+
+  typeMedicament =['ANALGESICO', 'ANELEPTICO','ANESTESICO','ANTIACIDO', 'ANTIDEPRESIVO','ANTIBIOTICO']
 }
