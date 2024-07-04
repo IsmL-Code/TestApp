@@ -98,14 +98,25 @@ export class AppComponent implements OnInit {
 
   buildForms() {
     this.form1 = this.fb.group({
-      name_medicament: [null, [Validators.required]],
+      name_medicament: [null, [Validators.required, Validators.pattern(/^[a-zA-Z0-9 ]*$/)]],
       type_medicament: [null, [Validators.required]],
-      cant_medicament: [null, [Validators.required]],
+      cant_medicament: [null, [Validators.required, this.noEsNegativo]],
     });
 
     this.form2 = this.fb.group({
       dealer: [null, [Validators.required]],
     });
+  }
+
+  noEsNegativo(control: { value: any; }) {
+    const value = control.value;
+    if (value < 0) {
+      return { negativo: true };
+    }
+    if (value <= 0) {
+      return { cantidadInvalida: true };
+    }
+    return null;
   }
 
   sendRequest() {
@@ -146,4 +157,7 @@ export class AppComponent implements OnInit {
     console.log(item);
     item!.send = true;
   }
+
+
+
 }

@@ -10,7 +10,7 @@
           <form nz-form [formGroup]="form1">
             <nz-form-item>
               <nz-form-label nzRequired [nzSpan]="6" nzFor="email">Nombre del medicameto</nz-form-label>
-              <nz-form-control [nzSpan]="14">
+              <nz-form-control [nzSpan]="14" nzErrorTip="Solo se permiten letras, números y espacios">
                 <input formControlName="name_medicament" nz-input>
               </nz-form-control>
             </nz-form-item>
@@ -24,10 +24,11 @@
             </nz-form-item>
             <nz-form-item>
               <nz-form-label nzRequired [nzSpan]="6" nzFor="email">Cantidad del medicameto</nz-form-label>
-              <nz-form-control [nzSpan]="14">
+              <nz-form-control [nzSpan]="14" nzErrorTip="La cantidad ingresada no puede ser negativa o cero">
                 <input formControlName="cant_medicament" type="number" nz-input>
               </nz-form-control>
             </nz-form-item>
+
           </form>
           <nz-divider nzText="Distribuidor" nzOrientation="right"></nz-divider>
           <form nz-form [formGroup]="form2">
