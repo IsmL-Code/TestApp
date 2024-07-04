@@ -28,6 +28,7 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    FormsModule, 
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
